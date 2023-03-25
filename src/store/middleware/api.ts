@@ -3,9 +3,6 @@ import { createAction, Middleware } from '@reduxjs/toolkit';
 import axiosRetry from "axios-retry";
 import { BASE_URL } from "@env";
 
-console.log('BASE_URL');
-console.log(BASE_URL);
-
 axiosRetry(axios, { retries: 3 })
 
 export type APICall<T> = {

@@ -5,7 +5,8 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
@@ -23,7 +24,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@types/jest": "^29.5.0",
     "@types/react": "~18.0.29",
+    "axios-mock-adapter": "^1.21.2",
+    "jest": "^29.5.0",
     "typescript": "^5.0.2"
   },
   "private": true
