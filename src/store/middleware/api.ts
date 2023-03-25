@@ -1,6 +1,10 @@
 import axios from "axios";
 import { createAction, Middleware } from '@reduxjs/toolkit';
 import axiosRetry from "axios-retry";
+import { BASE_URL } from "@env";
+
+console.log('BASE_URL');
+console.log(BASE_URL);
 
 axiosRetry(axios, { retries: 3 })
 
@@ -28,11 +32,11 @@ const api: Middleware = store => next => async action => {
             store.dispatch({ type: onStart })
         }
 
-        console.log(`${method} ${url}`, data ?? 'no data')
+        console.log(`${method} ${BASE_URL}${url}`, data ?? 'no data')
 
         try {
             const response = await axios.request({
-                baseURL: 'https://api.magicthegathering.io/v1',
+                baseURL: BASE_URL,
                 url,
                 method,
                 data
